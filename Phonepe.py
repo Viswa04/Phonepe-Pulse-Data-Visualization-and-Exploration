@@ -53,7 +53,7 @@ with tab1:
     st.link_button("Get Phonepe App","https://www.phonepe.com/app-download/")
 
 with tab3:
-    question = st.selectbox("Select the question",("None","1. Top 10 Mobile brands based on Transaction count","2. Top 10 States based on year and transaction amount",
+    question = st.selectbox(":red[Select the question]",("None","1. Top 10 Mobile brands based on Transaction count","2. Top 10 States based on year and transaction amount",
                                                     "3. Top 10 States based on users registered","4. Top 10 Districts based on users registered",
                                                     "5. Top 10 Districts with least transaction amount","6. Top 10 States with App opens",
                                                     "7. Top Transaction type based on transaction amount","8. Top 15 States based on transaction count",
@@ -69,7 +69,7 @@ with tab3:
         with col1:
             st.table(table1)
         with col2:
-            st.header("Pie chart for particular Table")
+            st.header(":red[Pie chart for particular Table]")
             fig,ax = plt.subplots()
             ax.pie(table1["No_of_Transaction"], labels=table1["Mobile_Brands"], autopct="%1.1f%%", startangle=45)
             ax.axis("equal")
@@ -85,7 +85,7 @@ with tab3:
         with col1:
             st.table(table2)
         with col2:
-            st.header("Scatter Chart for particular Table")
+            st.header(":red[Scatter Chart for particular Table]")
             fig,ax = plt.subplots()
             scatter = ax.scatter(table2["States"], table2["Transaction_amount"], c=table2["Years"], label=table2["Years"])
             ax.legend(*scatter.legend_elements(), title="Years")
@@ -104,7 +104,7 @@ with tab3:
         with col1:
             st.table(table3)
         with col2:
-            st.header("Pie chart for particular Table")
+            st.header(":red[Pie chart for particular Table]")
             fig,ax = plt.subplots()
             ax.pie(table3["No.of Users"], labels=table3["States"], autopct="%1.1f%%", startangle=90)
             ax.axis("equal")
@@ -120,7 +120,7 @@ with tab3:
         with col1:
             st.table(table4)
         with col2:
-            st.header("Scatter Chart for particular Table")
+            st.header(":red[Scatter Chart for particular Table]")
             fig,ax = plt.subplots()
             scatter = ax.scatter(table4["Districts"], table4["No.of Users"])
             ax.set_xticklabels(table4["Districts"], rotation=45, ha="right")
@@ -138,7 +138,7 @@ with tab3:
         with col1:
             st.table(table5)
         with col2:
-            st.header("Bar Chart for particular Table")
+            st.header(":red[Bar Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.bar(table5["Districts"], table5["Transaction_Amount"])
             ax.set_xticklabels(table5["Districts"], rotation=45, ha="right")
@@ -156,7 +156,7 @@ with tab3:
         with col1:
             st.table(table6)
         with col2:
-            st.header("Bar Chart for particular Table")
+            st.header(":red[Bar Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.bar(table6["States"], table6["App_Opens"])
             ax.set_xticklabels(table6["States"], rotation=45, ha="right")
@@ -174,7 +174,7 @@ with tab3:
         with col1:
             st.table(table7)
         with col2:
-            st.header("Line Chart for particular Table")
+            st.header(":red[Line Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.plot(table7["Transaction_Type"], table7["Transaction_Amount"], marker="o")
             ax.set_xticklabels(table7["Transaction_Type"], rotation=45, ha="right")
@@ -192,7 +192,7 @@ with tab3:
         with col1:
             st.table(table8)
         with col2:
-            st.header("Line Chart for particular Table")
+            st.header(":red[Line Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.plot(table8["States"], table8["Total_Transaction"], marker="o")
             ax.set_xticklabels(table8["States"], rotation=45, ha="right")
@@ -210,7 +210,7 @@ with tab3:
         with col1:
             st.table(table9)
         with col2:
-            st.header("Line Chart for particular Table")
+            st.header(":red[Line Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.plot(table9["Districts"], table9["Transaction_Amount"], marker="o")
             ax.set_xticklabels(table9["Districts"], rotation=45, ha="right")
@@ -228,7 +228,7 @@ with tab3:
         with col1:
             st.table(table10)
         with col2:
-            st.header("Bar Chart for particular Table")
+            st.header(":red[Bar Chart for particular Table]")
             fig,ax = plt.subplots()
             ax.bar(table10["Years"], table10["No. of Transaction"])
             ax.set_xlabel("Years")
@@ -236,11 +236,11 @@ with tab3:
             st.pyplot(fig)
 
 with tab2:
-    Type = st.selectbox("Select the Type",("Transactions","Users"))
+    Type = st.selectbox(":red[Select the Type]",("Transactions","Users"))
     
     # Transaction Typer
     if Type == "Transactions":
-        Selected_states = st.selectbox("Select the State",("Andaman & Nicobar","Andhra Pradesh","Arunachal Pradesh","Assam",
+        Selected_states = st.selectbox(":red[Select the State]",("Andaman & Nicobar","Andhra Pradesh","Arunachal Pradesh","Assam",
                                         "Bihar","Chandigarh","Chhattisgarh","Dadra And Nagar Haveli And Daman And Diu",
                                         "Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand",
                                         "Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur",
@@ -249,10 +249,10 @@ with tab2:
         
         col1,col2 = st.columns(2)
         with col1:
-            Year = st.selectbox("Select the year",("2018","2019","2020","2021","2022","2023"))
+            Year = st.selectbox(":red[Select the year]",("2018","2019","2020","2021","2022","2023"))
 
         with col2:
-            Quarter = st.selectbox("Select the Quarter",("1","2","3","4"))
+            Quarter = st.selectbox(":red[Select the Quarter]",("1","2","3","4"))
         
         with col1:
             # Geo Visualization of all States based on Transaction Amount
@@ -317,7 +317,7 @@ with tab2:
     
     # Users Type
     if Type == "Users":
-        Selected_states = st.selectbox("Select the State",("Andaman & Nicobar","Andhra Pradesh","Arunachal Pradesh","Assam",
+        Selected_states = st.selectbox(":red[Select the State]",("Andaman & Nicobar","Andhra Pradesh","Arunachal Pradesh","Assam",
                                         "Bihar","Chandigarh","Chhattisgarh","Dadra And Nagar Haveli And Daman And Diu",
                                         "Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand",
                                         "Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur",
@@ -326,9 +326,9 @@ with tab2:
         
         col1,col2 = st.columns(2)
         with col1:
-            Year = st.selectbox("Select the year",("2018","2019","2020","2021","2022","2023"))
+            Year = st.selectbox(":red[Select the year]",("2018","2019","2020","2021","2022","2023"))
         with col2:
-            Quarter = st.selectbox("Select the Quarter",("1","2","3","4"))
+            Quarter = st.selectbox(":red[Select the Quarter]",("1","2","3","4"))
 
         # Geo Visualization of all States based on User App opens
         st.subheader(":red[All States based on User App opens]")
